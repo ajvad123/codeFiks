@@ -1,5 +1,5 @@
 import React from 'react';
-import { Clock, Users, Award, Code, Database, Smartphone, Globe } from 'lucide-react';
+import { Clock, Headphones, Award, Code, Database, Smartphone, Globe } from 'lucide-react';
 
 const Courses = () => {
   const courses = [
@@ -9,7 +9,7 @@ const Courses = () => {
       description: 'Master MongoDB, Express.js, React, and Node.js to build full-stack web applications.',
       icon: Globe,
       duration: '6 Months',
-      students: '500+',
+      support: '24/7',
       level: 'Beginner to Advanced',
       features: ['MongoDB & Express.js', 'React & Redux', 'Node.js & APIs', 'Real-time Applications'],
       color: 'from-green-400 to-green-600',
@@ -20,7 +20,7 @@ const Courses = () => {
       description: 'Learn MongoDB, Express.js, Angular, and Node.js for enterprise-level applications.',
       icon: Code,
       duration: '6 Months',
-      students: '400+',
+      support: '24/7',
       level: 'Intermediate',
       features: ['Angular Framework', 'TypeScript', 'RESTful APIs', 'Enterprise Architecture'],
       color: 'from-red-400 to-red-600',
@@ -31,7 +31,7 @@ const Courses = () => {
       description: 'Build robust web applications with Python and Django framework.',
       icon: Database,
       duration: '6 Months',
-      students: '600+',
+      support: '24/7',
       level: 'Beginner Friendly',
       features: ['Python Fundamentals', 'Django Framework', 'Database Design', 'API Development'],
       color: 'from-blue-400 to-blue-600',
@@ -42,7 +42,7 @@ const Courses = () => {
       description: 'Create beautiful cross-platform mobile apps with Google\'s Flutter framework.',
       icon: Smartphone,
       duration: '6 Months',
-      students: '350+',
+      support: '24/7',
       level: 'Mobile Development',
       features: ['Dart Programming', 'Widget Development', 'State Management', 'App Publishing'],
       color: 'from-purple-400 to-purple-600',
@@ -85,8 +85,9 @@ const Courses = () => {
                     <p className="text-sm font-semibold text-foreground">{course.duration}</p>
                   </div>
                   <div className="text-center p-3 rounded-lg bg-secondary/50 hover-glow transition-all duration-300">
-                    <Users className="h-6 w-6 text-primary mx-auto mb-1 animate-pulse" />
-                    <p className="text-sm font-semibold text-foreground">{course.students}</p>
+                    <Headphones className="h-6 w-6 text-primary mx-auto mb-1 animate-pulse" />
+                    <p className="text-sm font-semibold text-foreground">{course.support}</p>
+                    <p className="text-xs text-foreground/60">Learning Support</p>
                   </div>
                   <div className="text-center p-3 rounded-lg bg-secondary/50 hover-glow transition-all duration-300">
                     <Award className="h-6 w-6 text-primary mx-auto mb-1 animate-pulse" />
@@ -136,8 +137,8 @@ const Courses = () => {
                   <div className="text-lg opacity-90">Real Experience</div>
                 </div>
                 <div className="text-center p-4 rounded-lg bg-white/10 backdrop-blur-sm hover-lift transition-all duration-300">
-                  <div className="text-3xl font-bold animate-pulse">95%</div>
-                  <div className="text-lg opacity-90">Placement Rate</div>
+                  <div className="text-3xl font-bold animate-pulse">100%</div>
+                  <div className="text-lg opacity-90">Placement Assistance</div>
                 </div>
                 <div className="text-center p-4 rounded-lg bg-white/10 backdrop-blur-sm hover-lift transition-all duration-300">
                   <div className="text-3xl font-bold animate-pulse">24/7</div>

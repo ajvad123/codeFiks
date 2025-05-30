@@ -76,7 +76,7 @@ const About = () => {
                 </li>
                 <li className="flex items-center hover:text-foreground transition-colors duration-200">
                   <div className="w-2 h-2 bg-primary rounded-full mr-3 animate-pulse" style={{ animationDelay: '0.2s' }}></div>
-                  95% placement success rate
+                  100% Placement Assistance
                 </li>
                 <li className="flex items-center hover:text-foreground transition-colors duration-200">
                   <div className="w-2 h-2 bg-primary rounded-full mr-3 animate-pulse" style={{ animationDelay: '0.3s' }}></div>
@@ -122,7 +122,7 @@ const About = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="mt-20 bg-gradient-to-r from-primary/90 to-purple-600/90 rounded-2xl p-12 shadow-2xl animate-fade-in-up hover-glow border border-primary/20">
+        {/* <div className="mt-20 bg-gradient-to-r from-primary/90 to-purple-600/90 rounded-2xl p-12 shadow-2xl animate-fade-in-up hover-glow border border-primary/20">
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-purple-600/20 rounded-2xl blur-xl"></div>
             <div className="relative z-10 grid md:grid-cols-4 gap-8 text-center text-white">
@@ -144,7 +144,7 @@ const About = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
