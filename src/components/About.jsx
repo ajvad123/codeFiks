@@ -112,7 +112,7 @@ const About = () => {
                   <h4 className="font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
                     {feature.title}
                   </h4>
-                  <p className="text-sm text-foreground/70 leading-relaxed group-hover:text-foreground/90 transition-colors duration-300">
+                  <p className="text-sm text-foreground/70 leading-relaxed group-hover:text-foreground/90 transition-colors duration-300 hidden sm:block">
                     {feature.description}
                   </p>
                 </div>

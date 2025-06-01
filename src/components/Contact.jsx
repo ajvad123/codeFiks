@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Clock, Send, MessageCircle, Facebook, Linkedin, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send, Facebook, Linkedin, Instagram } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -41,7 +41,7 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Call Us',
-      info: '+1 (555) 123-4567',
+      info: '+91 95390 21529',
       subInfo: 'Mon-Fri 9AM-6PM',
     },
     {
@@ -109,6 +109,17 @@ const Contact = () => {
                           className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-300 hover-lift animate-bounce-gentle"
                           style={{ animationDelay: `${index * 0.1}s` }}
                           title={social.name}
+                          onClick={() => {
+                            if(social.name === 'WhatsApp') {
+                              window.open('https://wa.me/919539021529', '_blank');
+                            } else if(social.name === 'Facebook') {
+                              window.open('https://facebook.com', '_blank'); // replace with your URL
+                            } else if(social.name === 'LinkedIn') {
+                              window.open('https://linkedin.com', '_blank'); // replace with your URL
+                            } else if(social.name === 'Instagram') {
+                              window.open('https://instagram.com', '_blank'); // replace with your URL
+                            }
+                          }}
                         >
                           {social.name === 'WhatsApp' ? (
                             <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -134,7 +145,7 @@ const Contact = () => {
                 Send us a Message
               </h3>
               
-              <div className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
@@ -222,13 +233,12 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  onClick={handleSubmit}
                   className="w-full bg-primary text-primary-foreground py-4 px-6 rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300 flex items-center justify-center group hover-lift animate-pulse-glow"
                 >
                   Send Message
                   <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </button>
-              </div>
+              </form>
             </div>
           </div>
         </div>
@@ -241,10 +251,13 @@ const Contact = () => {
               Our team is here to help you make the right choice for your career.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300 hover-lift group">
+              <a
+                href="tel:+919539021529"
+                className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300 hover-lift group inline-flex items-center justify-center"
+              >
                 <Phone className="inline h-4 w-4 mr-2 group-hover:scale-110 transition-transform duration-300" />
                 Schedule a Call
-              </button>
+              </a>
               <button className="border-2 border-primary text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary/10 transition-all duration-300 hover-lift group">
                 <Mail className="inline h-4 w-4 mr-2 group-hover:scale-110 transition-transform duration-300" />
                 Send Email
