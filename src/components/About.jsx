@@ -30,7 +30,7 @@ const About = () => {
     <section id="about" className="py-20 bg-background transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-       
+
           {/* Content */}
           <div className="animate-fade-in-left">
             <h2 className="text-4xl font-bold text-foreground mb-6">

@@ -1,11 +1,46 @@
 // CourseDetailTemplate.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import {
-  Clock, BookOpen, CheckCircle, Star, User
+  Clock, BookOpen, CheckCircle, Star, User, Calendar, Users, X, Mail, MapPin, GraduationCap, CalendarDays, MessageSquare, Code
 } from 'lucide-react';
 
 const CourseDetailTemplate = ({ course }) => {
   const Icon = course.icon;
+  const [showForm, setShowForm] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    place: '',
+    qualification: '',
+    yearOfGraduation: '',
+    techStack: '',
+    reason: '',
+    email: ''
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission here
+    console.log('Form submitted:', formData);
+    alert('Registration submitted successfully! We will contact you soon.');
+    setShowForm(false);
+    setFormData({
+      name: '',
+      place: '',
+      qualification: '',
+      yearOfGraduation: '',
+      techStack: '',
+      reason: '',
+      email: ''
+    });
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
@@ -72,27 +107,54 @@ const CourseDetailTemplate = ({ course }) => {
 
           {/* Right Sidebar */}
           <aside className="space-y-10">
-            {/* Instructor */}
+            {/* Fumigation Test Entry */}
             <section className="bg-card rounded-xl p-6 shadow-md border border-border hover-glow transition-all duration-300 animate-fade-in-right">
-              <h3 className="text-2xl font-bold text-foreground mb-5 flex items-center gap-2">
-                <User className="h-6 w-6 text-primary" />
-                Your Instructor
+              <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-2">
+                <BookOpen className="h-6 w-6 text-primary" />
+                Take Fumigation Test
               </h3>
-              <div className="text-center">
-                <div
-                  className={`w-20 h-20 mx-auto rounded-full bg-gradient-to-r ${course.color} flex items-center justify-center text-white font-extrabold text-3xl mb-4 animate-scale-pulse`}
-                  title={course.instructor.name}
-                >
-                  {course.instructor.name
-                    .split(' ')
-                    .map((n) => n[0])
-                    .join('')}
+              <div className="space-y-6">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-foreground mb-2">
+                    ₹10,000
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-4">Fumigation Test Fee</p>
                 </div>
-                <h4 className="text-xl font-semibold text-foreground">{course.instructor.name}</h4>
-                <p className="text-muted-foreground mt-1 mb-4">{course.instructor.experience}</p>
-                <p className="text-sm text-muted-foreground">
-                  <strong>Previously worked at:</strong> {course.instructor.companies.join(', ')}
-                </p>
+                
+                <div className="bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 mb-4">
+                  <p className="text-sm text-blue-800 dark:text-blue-200 font-medium mb-2">
+                    💡 Important Notice
+                  </p>
+                  <p className="text-xs text-blue-700 dark:text-blue-300">
+                    Test fee is <strong>fully refundable</strong> if you fail or quit the fumigation test. Only successful candidates proceed to the main course.
+                  </p>
+                </div>
+                
+                <button 
+                  onClick={() => setShowForm(true)}
+                  className={`w-full bg-gradient-to-r ${course.color} text-white py-3 px-6 rounded-lg font-semibold text-lg hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg`}
+                >
+                  Register for Test
+                </button>
+                
+                <div className="space-y-3 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-2">
+                    <Calendar className="h-4 w-4 text-primary" />
+                    <span>Next Test: {course.testDate || 'This Saturday'}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Clock className="h-4 w-4 text-primary" />
+                    <span>Duration: {course.testDuration || '2 hours'}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Users className="h-4 w-4 text-primary" />
+                    <span>{course.testSpotsLeft || '8'} test slots remaining</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-500" />
+                    <span>100% refundable if unsuccessful</span>
+                  </div>
+                </div>
               </div>
             </section>
 
@@ -121,6 +183,175 @@ const CourseDetailTemplate = ({ course }) => {
           </aside>
         </div>
       </main>
+
+      {/* Registration Form Modal */}
+      {showForm && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <div className="bg-card rounded-xl p-8 shadow-2xl border border-border max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-2xl font-bold text-foreground">Fumigation Test Registration</h2>
+              <button 
+                onClick={() => setShowForm(false)}
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Name */}
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-2 flex items-center gap-2">
+                  <User className="h-4 w-4" />
+                  Full Name *
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-3 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                  placeholder="Enter your full name"
+                />
+              </div>
+
+              {/* Place */}
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-2 flex items-center gap-2">
+                  <MapPin className="h-4 w-4" />
+                  Place *
+                </label>
+                <input
+                  type="text"
+                  name="place"
+                  value={formData.place}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-3 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                  placeholder="Enter your city/location"
+                />
+              </div>
+
+              {/* Educational Qualification */}
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-2 flex items-center gap-2">
+                  <GraduationCap className="h-4 w-4" />
+                  Educational Qualification *
+                </label>
+                <select
+                  name="qualification"
+                  value={formData.qualification}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-3 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                >
+                  <option value="">Select your qualification</option>
+                  <option value="10th">10th Standard</option>
+                  <option value="12th">12th Standard</option>
+                  <option value="diploma">Diploma</option>
+                  <option value="bachelor">Bachelor's Degree</option>
+                  <option value="master">Master's Degree</option>
+                  <option value="phd">PhD</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              {/* Year of Graduation */}
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-2 flex items-center gap-2">
+                  <CalendarDays className="h-4 w-4" />
+                  Year of Graduation/Pass Out *
+                </label>
+                <input
+                  type="number"
+                  name="yearOfGraduation"
+                  value={formData.yearOfGraduation}
+                  onChange={handleInputChange}
+                  required
+                  min="1970"
+                  max="2025"
+                  className="w-full px-4 py-3 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                  placeholder="e.g., 2023"
+                />
+              </div>
+
+              {/* Tech Stack */}
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-2 flex items-center gap-2">
+                  <Code className="h-4 w-4" />
+                  Which stack are you going to use? *
+                </label>
+                <select
+                  name="techStack"
+                  value={formData.techStack}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-3 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                >
+                  <option value="">Select your preferred tech stack</option>
+                  <option value="mern">MERN (MongoDB, Express, React, Node.js)</option>
+                  <option value="mean">MEAN (MongoDB, Express, Angular, Node.js)</option>
+                  <option value="python-django">Python Django</option>
+                  <option value="go">Go (Golang)</option>
+                  <option value="flutter">Flutter</option>
+                </select>
+              </div>
+
+              {/* Reason to Join */}
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-2 flex items-center gap-2">
+                  <MessageSquare className="h-4 w-4" />
+                  Why do you want to join the Haxford Academy? *
+                </label>
+                <textarea
+                  name="reason"
+                  value={formData.reason}
+                  onChange={handleInputChange}
+                  required
+                  rows="4"
+                  className="w-full px-4 py-3 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-vertical"
+                  placeholder="Tell us about your motivation and goals..."
+                />
+              </div>
+
+              {/* Email */}
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-2 flex items-center gap-2">
+                  <Mail className="h-4 w-4" />
+                  Email Address *
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-3 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                  placeholder="Enter your email address"
+                />
+              </div>
+
+              {/* Submit Button */}
+              <div className="flex gap-4 pt-4">
+                <button
+                  type="button"
+                  onClick={() => setShowForm(false)}
+                  className="flex-1 px-6 py-3 border border-border rounded-lg text-muted-foreground hover:text-foreground hover:border-foreground transition-all"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className={`flex-1 bg-gradient-to-r ${course.color} text-white py-3 px-6 rounded-lg font-semibold hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg`}
+                >
+                  Submit Registration
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
