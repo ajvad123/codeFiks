@@ -34,7 +34,7 @@ const About = () => {
           {/* Content */}
           <div className="animate-fade-in-left">
             <h2 className="text-4xl font-bold text-foreground mb-6">
-              About <span className="text-primary bg-gradient-to-r from-primary to-purple-600 bg-clip-text">Codefiks</span>
+              About <span className="text-primary bg-gradient-to-r from-primary to-purple-600 bg-clip-text">Haxord</span>
             </h2>
 
             <div className="mb-8">
@@ -63,7 +63,7 @@ const About = () => {
             <div className="bg-secondary/50 p-6 rounded-lg border border-border hover-glow transition-all duration-300 backdrop-blur-sm">
               <h4 className="text-lg font-semibold text-foreground mb-3 flex items-center">
                 <span className="w-2 h-2 bg-primary rounded-full mr-2 animate-pulse"></span>
-                Why Choose Codefiks?
+                Why Choose Haxord?
               </h4>
               <ul className="space-y-3 text-foreground/80">
                 <li className="flex items-center hover:text-foreground transition-colors duration-200">

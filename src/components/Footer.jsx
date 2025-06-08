@@ -42,7 +42,7 @@ const Footer = () => {
           <div className="col-span-1 animate-fade-in-up">
             <div className="flex items-center mb-6">
               <Code className="h-8 w-8 text-primary mr-2 animate-rotate-slow" />
-              <span className="text-2xl font-bold text-foreground">Codefiks</span>
+              <span className="text-2xl font-bold text-foreground">Haxord</span>
             </div>
             <p className="text-foreground/70 mb-6 leading-relaxed">
               Premier online software training institute offering comprehensive
@@ -51,7 +51,7 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center text-foreground/70 hover:text-primary transition-colors duration-300 hover-lift">
                 <Mail className="h-5 w-5 mr-3 text-primary" />
-                info@codefiks.com
+                info@Haxord.com
               </div>
               <div className="flex items-center text-foreground/70 hover:text-primary transition-colors duration-300 hover-lift">
                 <Phone className="h-5 w-5 mr-3 text-primary" />
@@ -159,7 +159,7 @@ const Footer = () => {
         <div className="border-t border-border mt-12 pt-8 animate-fade-in-up">
           <div className="flex flex-col md:flex-row justify-center items-center">
             <div className="text-foreground/70 mb-4 md:mb-0 text-center">
-              © {currentYear} Codefiks. All rights reserved.
+              © {currentYear} Haxord. All rights reserved.
             </div>
           </div>
         </div>

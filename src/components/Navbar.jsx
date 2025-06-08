@@ -21,7 +21,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center animate-fade-in-left">
               <Code className="h-8 w-8 text-primary mr-2 animate-rotate-slow" />
-              <span className="text-2xl font-bold text-foreground">Codefiks</span>
+              <span className="text-2xl font-bold text-foreground">Haxord</span>
             </div>
           </div>
 

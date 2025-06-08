@@ -17,8 +17,7 @@ const Hero = () => {
             <div className="flex items-center mb-4 animate-bounce-gentle">
               <Sparkles className="h-6 w-6 text-primary mr-2" />
               <span className="text-primary font-semibold text-sm uppercase tracking-wide">
-                Fueling Ambitions Through Code
-              </span>
+                Together to Your Future              </span>
             </div>
 
             <h1 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">
@@ -27,7 +26,7 @@ const Hero = () => {
               Technologies
             </h1>
             <p className="text-xl text-foreground/70 mt-6 leading-relaxed">
-              Join Codefiks, the premier online software training institute.
+              Join Haxord, the premier online software training institute.
               Learn MERN, MEAN, Python Django, Flutter and more. Get hands-on experience
               with real-world projects and secure your dream job with our placement support.
             </p>
@@ -38,8 +37,8 @@ const Hero = () => {
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
               </a>
               <a href="#codefiks" className="border-2 border-primary text-primary px-8 py-4 rounded-lg font-semibold hover:bg-primary/10 transition-all duration-300 hover-lift">
-                Life at Codefiks          
-                    </a>
+                Life at Haxord
+              </a>
             </div>
 
             {/* Stats */}
