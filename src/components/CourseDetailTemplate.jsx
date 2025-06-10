@@ -111,14 +111,14 @@ const CourseDetailTemplate = ({ course }) => {
             <section className="bg-card rounded-xl p-6 shadow-md border border-border hover-glow transition-all duration-300 animate-fade-in-right">
               <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-2">
                 <BookOpen className="h-6 w-6 text-primary" />
-                Take Fumigation Test
+                Take Screening
               </h3>
               <div className="space-y-6">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-foreground mb-2">
                     ₹10,000
                   </div>
-                  <p className="text-sm text-muted-foreground mb-4">Fumigation Test Fee</p>
+                  <p className="text-sm text-muted-foreground mb-4">Screening Fee</p>
                 </div>
                 
                 <div className="bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 mb-4">
@@ -126,7 +126,7 @@ const CourseDetailTemplate = ({ course }) => {
                     💡 Important Notice
                   </p>
                   <p className="text-xs text-blue-700 dark:text-blue-300">
-                    Test fee is <strong>fully refundable</strong> if you fail or quit the fumigation test. Only successful candidates proceed to the main course.
+                    Test fee is <strong>fully refundable</strong> if you fail or quit the Screening . Only successful candidates proceed to the main course.
                   </p>
                 </div>
                 
@@ -134,7 +134,7 @@ const CourseDetailTemplate = ({ course }) => {
                   onClick={() => setShowForm(true)}
                   className={`w-full bg-gradient-to-r ${course.color} text-white py-3 px-6 rounded-lg font-semibold text-lg hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg`}
                 >
-                  Register for Test
+                  Register for Screening
                 </button>
                 
                 <div className="space-y-3 text-sm text-muted-foreground">
@@ -146,10 +146,7 @@ const CourseDetailTemplate = ({ course }) => {
                     <Clock className="h-4 w-4 text-primary" />
                     <span>Duration: {course.testDuration || '2 hours'}</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Users className="h-4 w-4 text-primary" />
-                    <span>{course.testSpotsLeft || '8'} test slots remaining</span>
-                  </div>
+                 
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
                     <span>100% refundable if unsuccessful</span>
@@ -189,7 +186,7 @@ const CourseDetailTemplate = ({ course }) => {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
           <div className="bg-card rounded-xl p-8 shadow-2xl border border-border max-w-2xl w-full max-h-[90vh] overflow-y-auto">
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-2xl font-bold text-foreground">Fumigation Test Registration</h2>
+              <h2 className="text-2xl font-bold text-foreground">Screening Registration</h2>
               <button 
                 onClick={() => setShowForm(false)}
                 className="text-muted-foreground hover:text-foreground transition-colors"
