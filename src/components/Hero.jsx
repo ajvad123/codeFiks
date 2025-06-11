@@ -26,7 +26,7 @@ const Hero = () => {
               Technologies
             </h1>
             <p className="text-xl text-foreground/70 mt-6 leading-relaxed">
-              Join Haxord, the premier online software training institute.
+              Join Haxord Academy , the premier online software training institute.
               Learn MERN, MEAN, Python Django, Flutter and more. Get hands-on experience
               with real-world projects and secure your dream job with our placement support.
             </p>
@@ -37,7 +37,7 @@ const Hero = () => {
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
               </a>
               <a href="#codefiks" className="border-2 border-primary text-primary px-8 py-4 rounded-lg font-semibold hover:bg-primary/10 transition-all duration-300 hover-lift">
-                Life at Haxord
+                Life at Haxord Academy 
               </a>
             </div>
 

@@ -116,8 +116,7 @@ const CodefiksTimeline = () => {
               Life at Haxord
             </h1>
             <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed transform hover:scale-105 transition-transform duration-300">
-              Haxord is built on 3 principles: Open Material Education, Self Learning and Peer to peer Learning
-            </p>
+              At Haxord, we unlock potential through Open Learning, Fuel Self-Discovery, and Spark Growth through Peer Collaboration            </p>
 
             {/* Progress indicator */}
             <div className="mt-8 flex justify-center space-x-2">
@@ -125,8 +124,8 @@ const CodefiksTimeline = () => {
                 <div
                   key={index}
                   className={`w-3 h-3 rounded-full transition-all duration-500 ${currentPhase === index
-                      ? 'bg-purple-500 scale-125 shadow-lg'
-                      : 'bg-gray-300'
+                    ? 'bg-purple-500 scale-125 shadow-lg'
+                    : 'bg-gray-300'
                     }`}
                 />
               ))}
